@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World Clock - Juliette Vidal</title>
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.47/moment-timezone-with-data-1970-2030.min.js"></script>
   </head>
+
   <body>
     <div class="container">
       <h1>World Clocks</h1>
@@ -15,19 +18,19 @@
         <option value="new york">New York</option>
         <option value="auckland">Auckland</option>
       </select>
-      <div class="city">
+      <div class="city" id="LosAngeles">
         <div class="city-date">
           <h2>Los Angeles 🇺🇸</h2>
-          <div class="date">June 6th 2025</div>
+          <div class="date"></div>
         </div>
-        <div class="time">11:36:15 <small>AM</small></div>
+        <div class="time"></div>
       </div>
-      <div class="city">
+      <div class="city" id="paris">
         <div class="city-date">
-          <h2>Sydney 🇦🇺</h2>
-          <div class="date">June 6th 2025</div>
+          <h2>Paris</h2>
+          <div class="date"></div>
         </div>
-        <div class="time">11:36:15 <small>AM</small></div>
+        <div class="time"></div>
       </div>
     </div>
     <footer>
@@ -40,6 +43,6 @@
       and hosted on
       <a href="https://world-clock-jv.netlify.app/" target="_blank">Netlify</a>
     </footer>
-    <script src="src/style.css"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
