@@ -46,6 +46,7 @@ function displayCity(event) {
           </div>
           <div class="time">${cityTimeElement}</div>
         </div>`;
+      <a ref="/">All cities</a>;
     }
   }
   refreshTime();
