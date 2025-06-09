@@ -58,6 +58,10 @@ small {
   vertical-align: middle;
   line-height: 36px;
 }
+a.return {
+  text-align: left;
+  margin-top: 10px;
+}
 footer {
   text-align: center;
   opacity: 50%;
