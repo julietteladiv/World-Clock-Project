@@ -1,22 +1,26 @@
 function displayTime() {
   let losAngelesElement = document.querySelector("#LosAngeles");
-  let losAngelesDateElement = losAngelesElement.querySelector(".date");
-  let losAngelesTimeElement = losAngelesElement.querySelector(".time");
-  let LosAngelestime = moment().tz("America/Los_Angeles");
-  losAngelesDateElement.innerHTML = LosAngelestime.format("MMM Do YYYY");
-  losAngelesTimeElement.innerHTML = LosAngelestime.format(
-    "h:mm:ss [<small>]A[</small>]"
-  );
   if (losAngelesElement) {
+    let losAngelesDateElement = losAngelesElement.querySelector(".date");
+    let losAngelesTimeElement = losAngelesElement.querySelector(".time");
+    let LosAngelestime = moment().tz("America/Los_Angeles");
+    losAngelesDateElement.innerHTML = LosAngelestime.format("MMM Do YYYY");
+    losAngelesTimeElement.innerHTML = LosAngelestime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 
   let parisElement = document.querySelector("#paris");
-  let parisDateElement = parisElement.querySelector(".date");
-  let parisTimeElement = parisElement.querySelector(".time");
-  let paristime = moment().tz("Europe/Paris");
-  parisDateElement.innerHTML = paristime.format("MMM Do YYYY");
   if (parisElement) {
+    let parisDateElement = parisElement.querySelector(".date");
+    let parisTimeElement = parisElement.querySelector(".time");
+    let paristime = moment().tz("Europe/Paris");
+    parisDateElement.innerHTML = paristime.format("MMM Do YYYY");
 
-  parisTimeElement.innerHTML = paristime.format("h:mm:ss [<small>]A[</small>]");
+    parisTimeElement.innerHTML = paristime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 displayTime();
 setInterval(displayTime, 1000);
@@ -25,6 +29,9 @@ function displayCity(event) {
   event.preventDefault();
   function refreshTime() {
     let cityTimeZone = event.target.value;
+    if (cityTimeZone === "current") {
+      cityTimeZone = moment.tz.guess();
+    }
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
     let cityTime = moment().tz(cityTimeZone);
     let cityDateElement = cityTime.format("MMM Do YYYY");
@@ -41,6 +48,7 @@ function displayCity(event) {
         </div>`;
     }
   }
+  refreshTime();
   setInterval(refreshTime, 1000);
 }
 
