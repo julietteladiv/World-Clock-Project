@@ -46,7 +46,7 @@ function displayCity(event) {
           </div>
           <div class="time">${cityTimeElement}</div>
         </div>
-          <a class="return" ref="/">All cities</a>`;
+          <a class="return" href="/">All cities</a>`;
     }
   }
   refreshTime();
