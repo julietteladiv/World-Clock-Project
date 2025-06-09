@@ -7,12 +7,14 @@ function displayTime() {
   losAngelesTimeElement.innerHTML = LosAngelestime.format(
     "h:mm:ss [<small>]A[</small>]"
   );
+  if (losAngelesElement) {
 
   let parisElement = document.querySelector("#paris");
   let parisDateElement = parisElement.querySelector(".date");
   let parisTimeElement = parisElement.querySelector(".time");
   let paristime = moment().tz("Europe/Paris");
   parisDateElement.innerHTML = paristime.format("MMM Do YYYY");
+  if (parisElement) {
 
   parisTimeElement.innerHTML = paristime.format("h:mm:ss [<small>]A[</small>]");
 }
